@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "strictNullChecks": true, // types are non-nullable by default.
+        "skipLibCheck": true, // dont check validity of 3rd party libs.
+        "target": "es6",
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "dist",
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "node_modules/*"
+            ]
+        },
+        "declaration": true,
+        "removeComments": true
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
