@@ -1,9 +1,8 @@
-import { types } from "@babel/core"
-
 type Option<T> = undefined | T
-type Type = (something: any) => Option<any>
-type TypeValidator = (v: any) => boolean
 type Cases<Case> = { [key: string]: Case }
+
+export type Type = (something: any) => Option<any>
+export type TypeValidator = (v: any) => boolean
 
 // Returns a type based on the given validator.
 export function TypeConstructor(validator: TypeValidator): Type {
