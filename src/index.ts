@@ -49,11 +49,12 @@ export function Not(t: Type): Type {
 // Basic Types.
 //
 // Mapped JS Value Types.
+export const Bool = TypeConstructor(v => typeof v === 'boolean')
+
 export const Num = TypeConstructor(v => typeof v === 'number' && !isNaN(v) && isFinite(v))
 export const Int = And(Num, TypeConstructor(v => Number.isInteger(v)))
 export const Float = Num
 export const Str = TypeConstructor(v => typeof v === 'string')
-export const Bool = TypeConstructor(v => typeof v === 'boolean')
 
 export const Char = And(Str, TypeConstructor(v => v.length === 1))
 export const Digit = And(Char, TypeConstructor(c => c >= '0' && c <= '9'))
