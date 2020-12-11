@@ -1,6 +1,6 @@
 {
   "name": "@habitual/typing",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Concise and expressive runtime type checking.",
   "repository": {
     "type": "git",
