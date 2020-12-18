@@ -92,7 +92,7 @@ export function Tuple(...ts: Type[]): Type {
 
 export function Obj(blueprint: { [key: string]: Type }): Type {
     const fields = Object.entries(blueprint)
-    return TypeConstructor(v => fields.every(([k, t]) => isa(t, v[k])))
+    return TypeConstructor(v => v !== undefined && fields.every(([k, t]) => isa(t, v[k])))
 }
 
 export function Enum<Case>(cases: Cases<Case>): Type & { [K in keyof Cases<Case>]: Case } {
