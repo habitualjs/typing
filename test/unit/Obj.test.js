@@ -1,5 +1,5 @@
 import { stringify } from 'querystring'
-import { Datetime, Int, Obj, Optional, Str, Float, List } from '../../src/index'
+import { isa, Datetime, Int, Obj, Optional, Str, Float, List } from '../../src/index'
 
 // Object type must be passed blueprint.
 test('Obj constructor takes in blueprint.', () => {
@@ -91,6 +91,17 @@ test('Obj of Objs.', () => {
     }
 
     expect(Student(invalidS)).toBeUndefined()
+})
+
+test('Obj of objects', () => {
+    const T = Obj({
+        x: Obj({
+            y: Int,
+            z: Int
+        })
+    })
+
+    expect(isa(T, {})).toBe(false)
 })
 
 // Superset type can be passed to subset type.
